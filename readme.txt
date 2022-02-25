@@ -88,28 +88,30 @@ usare quindi tag del tipo "v1_0-Hooks" e non tag come "v1.0-Hooks"
 
 Successive iterazioni nel ciclo di sviluppo dell'applicativo web:
 
-1) Scrivere nuovo codice web app
+1) Fare una pull, per avere sempre allineato il progetto in locale con il remote.
 
-2) Pushare le modifiche effettuate
+2) Scrivere nuovo codice web app.
 
-3) Attendere che il file mainOnPush termini la sua esecuzione (si occupa di iniettare nuovamente gli hooks a valle delle modifiche)
+3) Pushare le modifiche effettuate.
 
-4) Eseguire la pull (per avere anche in locale i file di FE con gli hooks aggiornati)
+4) Attendere che il file mainOnPush termini la sua esecuzione (si occupa di iniettare nuovamente gli hooks a valle delle modifiche).
 
-5) Rieseguire applicazione web in locale 
+5) Eseguire la pull (per avere anche in locale i file di FE con gli hooks aggiornati).
 
-6) Registrare nuovi casi di test con Katalon Recorder
+6) Rieseguire applicazione web in locale.
 
-7) Esportare i nuovi casi di test (in Katalon in formato WebDriver+JUnit) e pushare i file (.java) ottenuti nella cartella
+7) Registrare nuovi casi di test con Katalon Recorder.
+
+8) Esportare i nuovi casi di test (in Katalon in formato WebDriver+JUnit) e pushare i file (.java) ottenuti nella cartella
 ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
 
-8) Attendere che il file mainOnPush.yml termini la sua esecuzione (si occupa di rendere i nuovi file di test eseguibili in modalità headless)
+9) Attendere che il file mainOnPush.yml termini la sua esecuzione (si occupa di rendere i nuovi file di test eseguibili in modalità headless).
 
-9) Creazione nuova release
+10) Creazione nuova release.
 
-10) Attendere esecuzione file main.yml (che va ad eseguire ed autogenerare la reportistica dei test di regressione)
+11) Attendere esecuzione file main.yml (che va ad eseguire ed autogenerare la reportistica dei test di regressione).
 
-11) Nella directory ./TestSuite/nomeTagCreato si troveranno tutti i report autogenerati inerenti ai test di regressione eseguiti.
+12) Nella directory ./TestSuite/nomeTagCreato si troveranno tutti i report autogenerati inerenti ai test di regressione eseguiti.
 Analizzare il report in formato ".xls" ed andare a correggere e/o eliminare i test rotti.
 
-12) Tornare al punto 1, se non è ancora terminato il ciclo di sviluppo dell'applicativo web.
+13) Tornare al punto 1, se non è ancora terminato il ciclo di sviluppo dell'applicativo web.
