@@ -1,4 +1,4 @@
-Strumento Generale sviluppato nella tesi di laurea. 
+Strumento Generale sviluppato nella tesi di laurea.
 
 Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
@@ -84,3 +84,32 @@ dei file di test pushati (in modo da renderli eseguibili all'interno di un conta
 
 NB: Non bisogna inserire metacaratteri nel nome di un tag, come per esempio il punto "."
 usare quindi tag del tipo "v1_0-Hooks" e non tag come "v1.0-Hooks"
+
+
+Successive iterazioni nel ciclo di sviluppo dell'applicativo web:
+
+1) Scrivere nuovo codice web app
+
+2) Pushare le modifiche effettuate
+
+3) Attendere che il file mainOnPush termini la sua esecuzione (si occupa di iniettare nuovamente gli hooks a valle delle modifiche)
+
+4) Eseguire la pull (per avere anche in locale i file di FE con gli hooks aggiornati)
+
+5) Rieseguire applicazione web in locale 
+
+6) Registrare nuovi casi di test con Katalon Recorder
+
+7) Esportare i nuovi casi di test (in Katalon in formato WebDriver+JUnit) e pushare i file (.java) ottenuti nella cartella
+./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
+
+8) Attendere che il file mainOnPush.yml termini la sua esecuzione (si occupa di rendere i nuovi file di test eseguibili in modalità headless)
+
+9) Creazione nuova release
+
+10) Attendere esecuzione file main.yml (che va ad eseguire ed autogenerare la reportistica dei test di regressione)
+
+11) Nella directory ./TestSuite/nomeTagCreato si troveranno tutti i report autogenerati inerenti ai test di regressione eseguiti.
+Analizzare il report in formato ".xls" ed andare a correggere e/o eliminare i test rotti.
+
+12) Tornare al punto 1, se non è ancora terminato il ciclo di sviluppo dell'applicativo web.
