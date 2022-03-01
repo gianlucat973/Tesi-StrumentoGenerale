@@ -32,11 +32,11 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testTradizionale_release_1_0() throws Exception {
+  public void testTradizionale_release_1_1() throws Exception {
     driver.get("http://localhost:4200/");
-    driver.findElement(By.xpath("//input[@id='exampleInputEmail1']")).click();
-    driver.findElement(By.xpath("//input[@id='exampleInputEmail1']")).clear();
-    driver.findElement(By.xpath("//input[@id='exampleInputEmail1']")).sendKeys("Mario");
+    driver.findElement(By.xpath("//input[@id='Input1ForEmail']")).click();
+    driver.findElement(By.xpath("//input[@id='Input1ForEmail']")).clear();
+    driver.findElement(By.xpath("//input[@id='Input1ForEmail']")).sendKeys("Mario");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='First Name'])[1]/following::div[1]")).click();
     driver.findElement(By.xpath("//input[@id='exampleInputPassword1']")).clear();
     driver.findElement(By.xpath("//input[@id='exampleInputPassword1']")).sendKeys("Rossi");
