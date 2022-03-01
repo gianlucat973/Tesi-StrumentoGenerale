@@ -32,7 +32,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testTradizionale_release_1_0() throws Exception {
+  public void testTradizionale_release_1_1() throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.xpath("//input[@id='Input1ForEmail']")).click();
     driver.findElement(By.xpath("//input[@id='Input1ForEmail']")).clear();
