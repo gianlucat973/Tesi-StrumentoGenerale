@@ -1,4 +1,8 @@
-echo "inserisci qui i comandi per lo starting del Back-End della tua applciazione web"
+echo "inserisci qui i comandi per lo starting del Back-End della tua applicazione web"
+sudo apt update
+sudo apt install openjdk-8-jdk openjdk-8-jre
+echo "Installata versione di java numero"
+java -version 
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master
 mvn clean install
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/target
