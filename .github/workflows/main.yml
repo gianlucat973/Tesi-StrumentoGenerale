@@ -27,14 +27,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Step 1 - Checkout main branch from GitHub
         uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Step 2 - Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
           
-      - name: Step 2.2 - Visualizzare tag corrente
+      - name: Step 2 - Visualizzare tag corrente
         run: |
           echo "Vediamo il tag corrente:"
           echo "${GITHUB_REF#refs/tags/}"
@@ -46,7 +40,7 @@ jobs:
           echo "Vediamo qual è l'id dell'attuale commit"
           echo "$GITHUB_SHA"
                  
-      - name: Step 5 - Creazione directory Test Suite
+      - name: Step 3 - Creazione directory Test Suite
         run: |
           ls -a
           if [ ! -d "/home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite" ]; then
@@ -56,30 +50,22 @@ jobs:
           echo "Vediamo se ha creato la cartella"
           ls -a       
         
-      - name: Step 6 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
+      - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
             bash startBackEnd.sh &
             
-      - name: Step 7 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
+      - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
             bash startFrontEnd.sh &
-
-      - name: Step Prima - VIEW JAVA VERSION
-        run:  |
-            sudo bash -c 'java -version'
             
-      - name: Step 8 - Set up JDK 1.11
+      - name: Step 6 - Set up JDK 1.8 per progetti di utility
         uses: actions/setup-java@v1
         with:
-          java-version: 1.11
-
-      - name: Step Dopo - VIEW JAVA VERSION
-        run:  |
-            sudo bash -c 'java -version'
+          java-version: 1.8
             
-      - name: Step 9 - Install Chrome Headless
+      - name: Step 7 - Install Chrome Headless
         run: |
           sudo apt-get update
           sudo apt-get upgrade
@@ -90,7 +76,7 @@ jobs:
           sudo apt-get -f install
           google-chrome-stable --headless --disable-gpu    
           
-      - name: Step 10 - Install Chrome-Driver for test junit
+      - name: Step 8 - Install Chrome-Driver for test junit
         run:  |
             wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
             echo "Vedo se si trova il punto zip"
@@ -107,13 +93,13 @@ jobs:
             echo "Contenuto della cartella chromedriver_v94_linux64"
             ls -a
           
-      - name: Step 11 - Eseguire test maven
+      - name: Step 9 - Eseguire test maven
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless
             sudo bash -c 'mvn test site &'
             sleep ${{ secrets.MIN_EXE_TEST }}m
                  
-      - name: Step 12 - Visualizzare report test
+      - name: Step 10 - Visualizzare report test
         run: |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/target/surefire-reports
             ls -a 
@@ -121,7 +107,7 @@ jobs:
             cat *.txt
             echo "Fine visualizzazione report!!!"                
        
-      - name: Step 13 - Spostamento report in directory corretta
+      - name: Step 11 - Spostamento report in directory corretta
         run: |  
           cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/target
           echo "Visualizziamo se c'è la cartella surefire-reports"
@@ -132,7 +118,7 @@ jobs:
           ls -a
           sudo cp -r ${GITHUB_REF#refs/tags/} /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite
           
-      - name: Step 14 - Push dei report
+      - name: Step 12 - Push dei report
         run: |
           echo "Vediamo quali cartelle ci sono nella directory di partenza"
           ls -a
@@ -152,7 +138,7 @@ jobs:
           git push -u origin ${GITHUB_REF#refs/tags/} --force
           echo "Push effettuato"         
           
-      - name: Step 15 - Unzip progetto "Miglioramento report test"
+      - name: Step 13 - Unzip progetto "Miglioramento report test"
         run: |
           ls 
           echo "Unzip del progetto"
@@ -160,7 +146,7 @@ jobs:
           echo "Progetto zippato"
           ls                    
           
-      - name: Step 16 - Esecuzione progetto "Miglioramento report test"
+      - name: Step 14 - Esecuzione progetto "Miglioramento report test"
         run: |    
           echo "Andiamo nella directory dove si trova il file jar eseguibile"
           cd miglioramentoReportTest/target
@@ -173,12 +159,12 @@ jobs:
           echo "Vediamo il contenuto del file xls di report unificato!!!"
           sudo mv tabellaReportTest.xls ${GITHUB_REF#refs/tags/}.xls
           
-      - name: Step 17 - Spostamento report xls in cartella dei report txt
+      - name: Step 15 - Spostamento report xls in cartella dei report txt
         run: | 
           cd miglioramentoReportTest/target
           sudo cp ${GITHUB_REF#refs/tags/}.xls /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/${GITHUB_REF#refs/tags/}
           
-      - name: Step 18 - Commit del report xls
+      - name: Step 16 - Commit del report xls
         run: | 
           echo "Vediamo quali cartelle ci sono nella directory di partenza"
           ls -a          
