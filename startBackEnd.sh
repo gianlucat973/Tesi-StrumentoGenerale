@@ -8,4 +8,4 @@ mvn clean install
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root/backend/target
 echo "Vediamo quali file jar si trovano in cartella target"
 ls -a
-java -jar backend-0.0.1-SNAPSHOT.jar
+java -jar backend-0.0.1-SNAPSHOT.jar &
