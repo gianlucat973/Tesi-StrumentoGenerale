@@ -59,6 +59,7 @@ jobs:
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
             bash startFrontEnd.sh &
+            sleep 6m
             
       - name: Step 6 - Set up JDK 1.8 per progetti di utility
         uses: actions/setup-java@v1
