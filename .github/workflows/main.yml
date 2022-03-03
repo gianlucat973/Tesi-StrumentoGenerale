@@ -53,13 +53,12 @@ jobs:
       - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
-            bash startBackEnd.sh &
+            bash startBackEnd.sh
             
       - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
-            bash startFrontEnd.sh &
-            sleep 6m
+            bash startFrontEnd.sh
             
       - name: Step 6 - Set up JDK 1.8 per progetti di utility
         uses: actions/setup-java@v1
