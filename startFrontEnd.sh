@@ -12,7 +12,10 @@ sudo n 12.20
 echo "Versione di node: "
 node -v
 echo "Versione di npm: "
-npm -v          
+npm -v
+echo "Inizio init di npm"
+npm init
+echo "Inizio install di npm"
 npm install
 echo "Provo ad INSTALLARE bcrypt"
 npm install bcrypt
