@@ -25,6 +25,9 @@ echo "Fine comandi installazione Node"
 echo "Inizio comandi esecuzione Frontend"
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/root/frontend
 echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
+echo "Inizio init di npm"
+npm init
+echo "Inizio init di npm"
 npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
 npm start &
