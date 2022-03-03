@@ -1,0 +1,10 @@
+<ul x184743903690-x-test-tpl-1>  <div class="card" x184743903690-x-test-hook-2>    <li *ngFor="let item of books" class="list-group-item d-flex justify-content-between align-items-center" x184743903690-x-test-hook-3>      <div class="card-header" x184743903690-x-test-hook-4>        <img src="{{item.img}}" width="150" height="250" class="img-thumbnail" x184743903690-x-test-hook-5>
+      </div>
+      <div class="card-body" x184743903690-x-test-hook-6>
+        <h5 class="card-title" x184743903690-x-test-hook-7>{{item.title}}, {{item.author}}, {{item.publisher}} </h5>
+        <p class="card-text" x184743903690-x-test-hook-8>Quantity : {{item.quantity}}</p>
+        <button class="btn btn-primary" (click)="clickMethod(item)" x184743903690-x-test-hook-9>Buy</button>
+      </div>
+    </li>
+  </div>
+</ul>

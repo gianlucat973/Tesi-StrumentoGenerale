@@ -1,0 +1,16 @@
+<ul x184748190297-x-test-tpl-1>  <div class="card" x184748190297-x-test-hook-2>    <li *ngFor="let item of orders" class="list-group-item d-flex justify-content-between align-items-center" x184748190297-x-test-hook-3>      <div class="card-header" x184748190297-x-test-hook-4>        <img src="{{item.img}}" width="150" height="250" class="img-thumbnail" x184748190297-x-test-hook-5>
+      </div>
+      <div class="card-body" x184748190297-x-test-hook-6>
+        <h5 class="card-title" x184748190297-x-test-hook-7>{{item.title}}</h5>
+        <p class="card-text" x184748190297-x-test-hook-8>Purchased quantity : {{item.quantity}}</p>
+        <p class="card-text" x184748190297-x-test-hook-9>Date of purchase : {{item.date}}</p>
+<!--
+        console.log(formatDate(this.orders[0].date,"dd/MM/YYYY, h:mm", "en-US"));-->
+
+        <!--
+                <button class="btn btn-primary">Buy</button>
+        -->
+      </div>
+    </li>
+  </div>
+</ul>
