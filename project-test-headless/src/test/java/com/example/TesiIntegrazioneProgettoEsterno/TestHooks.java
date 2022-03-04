@@ -11,7 +11,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class TestTradizionale3 {
+public class TestHooks {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
@@ -32,12 +32,14 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testTradizionale_release_1_2() throws Exception {
-    driver.get("http://localhost:4200/");
-    driver.findElement(By.id("exampleInputPassword1")).click();
-    driver.findElement(By.id("exampleInputPassword1")).clear();
-    driver.findElement(By.id("exampleInputPassword1")).sendKeys("Perretta");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Create User'])[1]/following::form[1]")).click();
+  public void testHooks() throws Exception {
+    driver.get("http://localhost:4200/auth");
+    driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-8]")).click();
+    driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-8]")).clear();
+    driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-8]")).sendKeys("test@test.com");
+    driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-11]")).clear();
+    driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-11]")).sendKeys("test123");
+    driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-13]")).click();
   }
 
 
