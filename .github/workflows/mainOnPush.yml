@@ -106,8 +106,8 @@ jobs:
             git add timeCommit.txt
             echo "File aggiunti!"
             git commit -m "Commit dal file yml dei file iniettati"
-            git branch -M ${{ secrets.BRANCH_NAME }} 
-            git push -u origin ${{ secrets.BRANCH_NAME }} --force
+            git branch -M ${GITHUB_REF#refs/heads/} 
+            git push -u origin ${GITHUB_REF#refs/heads/} --force
             echo "Push effettuato"  
             
       - name: Step 6 - Esecuzione progetto correzioneFormatoTest
@@ -134,5 +134,5 @@ jobs:
           echo "`date +%Y-%m-%d_%H-%M-%S`" > timeCommit.txt
           git add timeCommit.txt
           git commit -m "push automatico per la correzione del formato dei test"
-          git branch -M ${{ secrets.BRANCH_NAME }} 
-          git push -u origin ${{ secrets.BRANCH_NAME }}
+          git branch -M ${GITHUB_REF#refs/heads/}
+          git push -u origin ${GITHUB_REF#refs/heads/}
