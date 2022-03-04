@@ -23,7 +23,7 @@ NUMERO_SPLIT: 1
 MIN_EXE_TEST: 5
 FE_EXTENSION_TYPE: .html
 GRAMMAR_TYPE: angularjs
-DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-web-app
+DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-web-app 
 
 NB: I GRAMMAR_TYPE consentiti sono: ['angularjs', 'html', 'php', 'smarty', 'twig', 'freemarker']
 
