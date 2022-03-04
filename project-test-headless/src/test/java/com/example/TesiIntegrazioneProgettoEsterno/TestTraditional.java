@@ -11,7 +11,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class Traditional {
+public class TestTraditional {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
