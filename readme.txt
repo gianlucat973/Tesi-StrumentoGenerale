@@ -1,6 +1,6 @@
 Strumento Generale sviluppato nella tesi di laurea.
 
-Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
+Per configurarlo su di una propria applicazione web, seguire i seguenti passi: 
 
 1) Fare la fork del seguente repository: https://github.com/gianlucat97/Tesi-StrumentoGenerale.git
 
