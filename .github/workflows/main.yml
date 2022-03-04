@@ -96,7 +96,7 @@ jobs:
       - name: Step 9 - Eseguire test maven
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless
-            sudo bash -c 'mvn test site || echo "Uno dei test è fallito, creazione nuovo flusso di esecuzione..." &'
+            sudo bash -c 'mvn test site' || echo "Uno dei test è fallito, creazione nuovo flusso di esecuzione..."
                  
       - name: Step 10 - Visualizzare report test
         run: |
