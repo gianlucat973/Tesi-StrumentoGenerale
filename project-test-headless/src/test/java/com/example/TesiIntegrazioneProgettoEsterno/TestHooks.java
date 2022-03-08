@@ -1,11 +1,8 @@
-
-//File risulta attualmente aggiornato per webdriver chrome headless!
 package com.example.TesiIntegrazioneProgettoEsterno;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
-
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
