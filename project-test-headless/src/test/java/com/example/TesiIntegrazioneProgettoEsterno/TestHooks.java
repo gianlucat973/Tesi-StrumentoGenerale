@@ -1,11 +1,15 @@
+
+//File risulta attualmente aggiornato per webdriver chrome headless!
 package com.example.TesiIntegrazioneProgettoEsterno;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
+
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestHooks {
@@ -38,6 +42,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-11]")).sendKeys("test123");
     driver.findElement(By.xpath("//*[@x184761162527-x-test-tpl-1]//*[@x184761162527-x-test-hook-9]//*[@x184690670675-x-test-tpl-2]//*[@x184690670675-x-test-hook-4]//*[@x184733771964-x-test-tpl-1]//*[@x184733771964-x-test-hook-13]")).click();
   }
+
 
 
  @After
